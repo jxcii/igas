@@ -1,3 +1,3 @@
 # igas 
-Deme boshladi Tohirjon
+Deme boshladik Tohirjon
 🤪
