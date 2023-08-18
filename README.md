@@ -1,0 +1,3 @@
+# igas 
+Deme boshladi Tohirjon
+🤪
