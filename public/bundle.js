@@ -15,7 +15,7 @@
   \***********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const ReactDOM = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst User = __webpack_require__(/*! ./user.jsx */ \"./babel/user.jsx\");\nReactDOM.createRoot(document.getElementById(\"app\")).render( /*#__PURE__*/React.createElement(User, {\n  id: \"username\"\n}));\n\n//# sourceURL=webpack://igas/./babel/app.jsx?");
+eval("const ReactDOM = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nconst User = __webpack_require__(/*! ./user.jsx */ \"./babel/user.jsx\");\nlet users = [];\nfetch('/gjwfwhf39201920.json').then(response => {\n  return response.json();\n}).then(data => {\n  console.log(data);\n  data.forEach(x => {\n    users.push( /*#__PURE__*/React.createElement(User, {\n      class: \"user\",\n      username: x.username\n    }));\n  });\n  ReactDOM.createRoot(document.getElementById(\"app\")).render(users);\n});\n\n//# sourceURL=webpack://igas/./babel/app.jsx?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const ReactDOM = __webpack_require__(/*! react-dom/client */ \"./node_modu
   \************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nclass User extends react.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      name: props.username\n    };\n  }\n  render() {\n    return /*#__PURE__*/React.createElement(\"div\", {\n      id: this.state.name\n    }, /*#__PURE__*/React.createElement(\"img\", null), /*#__PURE__*/React.createElement(\"p\", null, \"Javohir\"), /*#__PURE__*/React.createElement(\"img\", null));\n  }\n}\nmodule.exports = User;\n\n//# sourceURL=webpack://igas/./babel/user.jsx?");
+eval("const react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nclass User extends react.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      class: props.class,\n      username: props.username\n    };\n  }\n  render() {\n    return /*#__PURE__*/React.createElement(\"div\", {\n      className: this.state.class\n    }, /*#__PURE__*/React.createElement(\"img\", null), /*#__PURE__*/React.createElement(\"p\", null, this.state.username), /*#__PURE__*/React.createElement(\"img\", null));\n  }\n}\nmodule.exports = User;\n\n//# sourceURL=webpack://igas/./babel/user.jsx?");
 
 /***/ }),
 

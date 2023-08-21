@@ -2,12 +2,12 @@ const react = require('react')
 class User extends react.Component {
     constructor(props){
         super(props)
-        this.state = { name : props.username }
+        this.state = { class : props.class, username: props.username }
     }
     render(){
-        return <div id={this.state.name}>
+        return <div className={this.state.class}>
             <img/>
-            <p>{"Javohr"}</p>
+            <p>{this.state.username}</p>
             <img/>
         </div>
     }
